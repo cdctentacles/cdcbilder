@@ -61,15 +61,22 @@ popd
 Write-Host "Success build and test code .. !!!"
 
 Write-Host "Running git status on all the repos.."
+
+Write-Host "In eventcollector directory.."
 pushd ..\eventcollector
 git status
 popd
+Write-Host "In azure event bus collector directory.."
 pushd ..\azure-event-bus-collector
 git status
 popd
+Write-Host "In producer-plugin directory.."
 pushd ..\producer-plugin
 git status
 popd
+Write-Host "In sample-cdc-sf-app directory.."
 pushd ..\sample-cdc-sf-app
 git status
 popd
+Write-Host "In current directory directory.."
+git status
