@@ -19,9 +19,9 @@ if (!(Test-Path "..\eventcollector"))
     Exec { git clone https://github.com/cdctentacles/eventcollector.git ..\eventcollector }
 }
 
-if (!(Test-Path "..\azure-event-bus-collector"))
+if (!(Test-Path "..\azure-event-hubs-plugin"))
 {
-    Exec { git clone https://github.com/cdctentacles/azure-event-bus-collector.git ..\azure-event-bus-collector }
+    Exec { git clone https://github.com/cdctentacles/azure-event-hubs-plugin.git ..\azure-event-hubs-plugin }
 }
 
 if (!(Test-Path "..\producer-plugin"))
@@ -40,9 +40,9 @@ pushd ..\eventcollector
 Exec { .\build_tests.ps1 }
 popd
 
-Write-Host "Building Azure Event Bus Collector .. !!!"
+Write-Host "Building Azure Event Hubs Plugin .. !!!"
 
-pushd ..\azure-event-bus-collector
+pushd ..\azure-event-hubs-plugin
 Exec { .\build_tests.ps1 }
 popd
 
@@ -66,8 +66,8 @@ Write-Host "In eventcollector directory.."
 pushd ..\eventcollector
 git status
 popd
-Write-Host "In azure event bus collector directory.."
-pushd ..\azure-event-bus-collector
+Write-Host "In azure event hubs plugin directory.."
+pushd ..\azure-event-hubs-plugin
 git status
 popd
 Write-Host "In producer-plugin directory.."
